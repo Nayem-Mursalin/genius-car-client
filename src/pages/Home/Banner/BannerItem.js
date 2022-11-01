@@ -16,7 +16,7 @@ const BannerItem = ({ slide }) => {
                 </h1>
             </div>
             <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-24 right-5 top-1/2">
-                <p className='text-white text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, dolore!</p>
+                <p className='text-white text-xl'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 right-5 top-3/4">
                 <button className="btn btn-warning mr-5">Warning</button>
