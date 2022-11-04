@@ -7,7 +7,7 @@ const CheckOut = () => {
     const { user } = useContext(AuthContext);
 
     const handlePlaceOrder = (event) => {
-        event.preventdefault();
+        event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
         const email = user?.email || 'unregistered';
@@ -23,6 +23,23 @@ const CheckOut = () => {
             phone,
             message
         }
+
+        fetch('http://localhost:5500/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Order placed successfully')
+                    form.reset();
+                }
+            })
+            .catch(er => console.error(er));
     }
 
     return (
